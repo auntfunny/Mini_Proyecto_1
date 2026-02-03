@@ -25,7 +25,7 @@
         alt="Logo"
         width="60px"
       />
-      <nav class="flex content-center items-center gap-8 md:gap-12 lg:gap-16">
+      <nav class="flex content-center items-center gap-4 md:gap-12 lg:gap-16">
         <a
           href="#about"
           class="hover:text-(--acc3) hover:scale-150 transition-all duration-300 ease-in-out"
@@ -51,16 +51,16 @@
       <img
         src="./src/images/Foto.png"
         alt="Picture of Anthony Black"
-        class="absolute bottom-0 left-1/3 w-1/3"
+        class="absolute bottom-0 left-2/5 w-1/5"
       />
     </section>
     <div class="bg-(--acc1) relative">
       <section
         id="about"
-        class="min-h-164 relative flex justify-center items-center"
+        class="min-h-164 relative flex flex-col  justify-center items-center"
       >
         <div
-          class="flex flex-col justify-evenly text-center h-100 w-1/2 p-3 rounded-2xl shadow-xl bg-(--acc2)"
+          class="flex flex-col justify-evenly text-center h-100 w-1/2 p-3 mt-7 rounded-2xl shadow-xl bg-(--acc2)"
         >
           <h2 class="text-3xl md:text-4xl lg:text-6xl font-bold text-(--acc3)">
             Who Am I?
@@ -80,8 +80,9 @@
             enjoying the outdoors, and cooking, especially sweets.
           </p>
         </div>
+        
         <div
-          class="absolute right-3/4 bottom-15 -rotate-12 flex justify-center items-center w-40 h-48 bg-(--acc4) rounded-2xl shadow-xl"
+          class="hidden relative lg:absolute lg:right-3/4 lg:bottom-15 lg:-rotate-12 lg:flex justify-center items-center w-40 h-48 bg-(--acc4) rounded-2xl shadow-xl"
         >
           <img
             src="./src/images/Foto_2.png"
@@ -90,7 +91,7 @@
           />
         </div>
         <div
-          class="absolute left-3/4 bottom-50 rotate-6 flex justify-center items-center w-40 h-52 bg-(--acc4) rounded-2xl shadow-xl"
+          class="hidden relative lg:absolute lg:left-3/4 lg:bottom-50 lg:rotate-6 lg:flex justify-center items-center w-40 h-52 bg-(--acc4) rounded-2xl shadow-xl"
         >
           <img
             src="./src/images/Foto_3.jpeg"
@@ -98,12 +99,32 @@
             class="rounded-xl w-36"
           />
         </div>
+        <div class="flex flex-wrap gap-8 justify-evenly items-center h-72  lg:hidden">
+          <div
+          class="-rotate-12 flex justify-center items-center w-40 h-48 bg-(--acc4) rounded-2xl shadow-xl"
+        >
+          <img
+            src="./src/images/Foto_2.png"
+            alt="Picture of Anthony Black 2"
+            class="rounded-xl w-36"
+          />
+        </div>
+        <div
+          class="rotate-6 flex justify-center items-center w-40 h-52 bg-(--acc4) rounded-2xl shadow-xl"
+        >
+          <img
+            src="./src/images/Foto_3.jpeg"
+            alt="Picture of Anthony Black 3"
+            class="rounded-xl w-36"
+          />
+        </div>
+        </div>
       </section>
       <section id="skills" class="min-h-164 flex justify-center items-center">
         <div
           class="flex flex-col gap-2 justify-around w-2/3 min-h-100 pb-8 p-4 bg-(--acc2) rounded-2xl shadow-lg"
         >
-          <h2 class="text-center text-(--acc3) text-6xl font-bold">Skills</h2>
+          <h2 class="text-center text-(--acc3) text-3xl md:text-4xl lg:text-6xl font-bold">Skills</h2>
           <div
             class="flex flex-wrap gap-3 relative justify-evenly items-center w-full"
           >
@@ -132,10 +153,10 @@
               />
             </div>
           </div>
-          <div class="flex justify-around w-full items-center">
+          <div class="flex flex-wrap justify-around w-full items-center">
             <div class="flex flex-col justify-around h-20 w-1/3">
-              <h3 class="text-center text-(--acc3) text-5xl">1</h3>
-              <p class="text-center text-(--acc4) text-2xl">
+              <h3 class="text-center text-(--acc3) text-2xl md:text-3xl lg:text-5xl">1</h3>
+              <p class="text-center text-(--acc4) text-lg md:text-xl lg:text-2xl">
                 year of experience
               </p>
             </div>
@@ -150,7 +171,16 @@
         </div>
       </section>
       <section id="projects" class="min-h-164 flex justify-center items-center">
-        Projects
+        <div class="flex flex-col gap-2 justify-around w-1/2 min-h-100 pb-8 p-4 bg-(--acc2) rounded-2xl shadow-lg">
+          <h2 class="text-center text-(--acc3) text-3xl md:text-4xl lg:text-6xl font-bold">Projects</h2>
+          <div class="flex gap-2 justify-center items-center py-5">
+            <a href="https://auntfunny.github.io/Social_Links_Profile/" target="_blank" class="h-60 w-20 rounded-xl hover:w-80 transition-all duration-300 bg-[url(/src/images/Social_Links.png)] bg-center shadow-lg "></a>
+            <a href="https://auntfunny.github.io/Blog_Preview_Card/" target="_blank"  class="h-60 w-20 rounded-xl hover:w-80 transition-all duration-300 bg-[url(/src/images/Blog_Preview.png)] bg-center shadow-lg "></a>
+            <div class="h-60 w-20 rounded-xl hover:w-45 transition-all duration-300 bg-[url(/src/images/Stairs.png)] bg-center shadow-lg "></div>
+            <div class="h-60 w-20 rounded-xl hover:w-80 transition-all duration-300 bg-[url(/src/images/Gate.png)] bg-center shadow-lg "></div>
+          </div>
+          <a href="#" class="self-center px-4 py-2 border-2 border-(--acc3) shadow-xl rounded-lg bg-(--acc3) font-bold text-(--acc4) text-lg hover:bg-(--acc4) hover:text-(--acc3) transition-all duration-300 ease-in-out" >Show my Projects</a>
+        </div>
       </section>
     </div>
     <aside class="hidden md:flex justify-center bg-(--acc1)">
