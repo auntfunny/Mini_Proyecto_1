@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-:root {
-    --acc1:#335145f4;
-    --acc2:#335145;
-    --acc3:#B7410E;
-    --acc4:#FDF5E6;
+@theme {
+    --color-acc1:#335145f4;
+    --color-acc2:#335145;
+    --color-acc3:#B7410E;
+    --color-acc4:#FDF5E6;
 }
