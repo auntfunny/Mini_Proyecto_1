@@ -4,7 +4,7 @@ import { resolve } from 'path';
 export default defineConfig({
   plugins: [tailwindcss()],
   build:{
-    roolupOptions:{
+    rollupOptions:{
       input:{
         main: resolve(__dirname,'index.html'),
         projects: resolve(__dirname, 'pages/my_projects.html'),
