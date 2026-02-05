@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image.png" href="./src/images/circle_logo.png" />
     <title>Anthony Black</title>
     <link rel="stylesheet" href="./src/input.css" />
     <script
@@ -17,7 +18,7 @@
     ></script>
   </head>
   <body
-    class="grid grid-cols-1 md:grid-cols-[3fr_1fr] grid-rows-[6rem_20rem_auto_20px] md:grid-rows-[6rem_30rem_auto_20px] lg:grid-rows-[6rem_40rem_auto_20px] font-['sunflower']"
+    class="grid grid-cols-1 md:grid-cols-[3fr_1fr] grid-rows-[6rem_20rem_auto_20px] md:grid-rows-[6rem_30rem_auto_20px] lg:grid-rows-[6rem_40rem_auto_20px] font-sunflower"
   >
     <header id="home" class="col-span-2 h-24">
       <!-- Mobile Nav Header -->
@@ -28,7 +29,7 @@
         <a href="index.html"
           ><img
             class="ml-2"
-            src="./src/images/colored-logo.png"
+            src="./src/images/circle_logo.png"
             alt="Logo"
             width="60px"
           />
@@ -121,8 +122,6 @@
                   class="block px-4 py-2 text-sm text-gray-700 focus:text-acc3 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5 dark:focus:text-white"
                   >Social Links</a
                 >
-
-                >
               </div>
             </el-menu>
           </el-dropdown>
@@ -140,7 +139,7 @@
       >
         <!-- Home link image -->
         <a href="index.html" class="absolute top-4 left-4"
-          ><img src="./src/images/colored-logo.png" alt="Logo" width="60px" />
+          ><img src="./src/images/circle_logo.png" alt="Logo" width="60px" />
         </a>
         <!-- Section links -->
         <div class="flex content-center items-center gap-4 md:gap-12 lg:gap-16">
@@ -202,8 +201,6 @@
                   class="block px-4 py-2 text-sm text-gray-700 focus:text-acc3 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5 dark:focus:text-white"
                   >Social Links</a
                 >
-
-                >
               </div>
             </el-menu>
           </el-dropdown>
@@ -234,11 +231,11 @@
       <img
         src="./src/images/Foto.png"
         alt="Picture of Anthony Black"
-        class="absolute bottom-0 mx-auto w-[25%]"
+        class="absolute bottom-0 mx-auto w-[25%] bg-radial from-acc3 via-transparent via-70% to-transparent"
       />
     </section>
     <!-- Main Content -->
-    <div class="bg-acc1 relative">
+    <main class="bg-acc1 relative">
       <!-- About section  -->
       <section
         id="about"
@@ -406,9 +403,11 @@
               target="_blank"
               class="h-60 w-20 rounded-xl hover:w-80 transition-all duration-300 bg-[url(/src/images/Blog_Preview.png)] bg-center shadow-lg"
             ></a>
-            <div
-              class="h-60 w-20 rounded-xl hover:w-45 transition-all duration-300 bg-[url(/src/images/Stairs.png)] bg-center shadow-lg"
-            ></div>
+            <a
+            href="https://recipe-page-main-eosin-omega.vercel.app/"
+            target="_blank"
+              class="h-60 w-20 rounded-xl hover:w-80 transition-all duration-300 bg-[url(/src/images/Recipe_Page.png)] bg-center shadow-lg"
+            ></a>
             <div
               class="h-60 w-20 rounded-xl hover:w-80 transition-all duration-300 bg-[url(/src/images/Gate.png)] bg-center shadow-lg"
             ></div>
@@ -421,7 +420,7 @@
           >
         </div>
       </section>
-    </div>
+    </main>
     <!-- Tablet and Computer side menu  -->
     <aside class="hidden md:flex justify-center bg-acc1">
       <nav
@@ -455,7 +454,7 @@
       </nav>
     </aside>
     <footer
-      class="col-span-2 flex justify-center items-center min-h-200 lg:min-h-160 bg-acc1"
+      class="col-span-2 flex flex-col gap-4 justify-center items-center min-h-200 lg:min-h-160 bg-acc1"
     >
       <!-- Contact me section  -->
       <section
@@ -508,6 +507,12 @@
           </button>
         </form>
       </section>
+      <!-- Back to Top Button -->
+      <a
+        href="#home"
+        class="w-3/4 py-3 bg-transparent border border-acc2 text-acc2 hover:text-acc4 hover:border-acc4 transition-colors duration-150 text-center rounded-xl"
+        >Back to Top</a
+      >
     </footer>
   </body>
 </html>
