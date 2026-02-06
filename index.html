@@ -23,19 +23,19 @@
     <header id="home" class="col-span-2 h-24">
       <!-- Mobile Nav Header -->
       <nav
-        class="flex md:hidden flex-row justify-between items-center h-24 w-full p-3 gap-2 bg-acc1 text-acc4"
+        class="flex flex-row justify-between md:justify-center items-center h-24 w-full px-2 py-3 md:p-4 gap-2 md:gap-0 bg-acc1 text-acc4"
       >
         <!-- Home link image -->
-        <a href="index.html"
+        <a href="index.html" class="md:absolute md:top-4 md:left-4"
           ><img
-            class="ml-2"
+            
             src="./src/images/circle_logo.png"
             alt="Logo"
             width="60px"
           />
         </a>
         <!-- Drop-down menu for sections -->
-        <div class="flex content-center items-center gap-4 md:gap-12 lg:gap-16">
+        <div class="flex md:hidden content-center items-center gap-4 md:gap-12 lg:gap-16">
           <el-dropdown class="inline-block">
             <!-- Menu Button  -->
             <button
@@ -82,13 +82,31 @@
             </el-menu>
           </el-dropdown>
         </div>
+         <!-- Section links -->
+        <div class="hidden md:flex content-center items-center gap-4 md:gap-12 lg:gap-16">
+          <a
+            href="#about"
+            class="hover:text-acc3 hover:scale-150 transition-all duration-300 ease-in-out"
+            >About me</a
+          >
+          <a
+            href="#skills"
+            class="hover:text-acc3 hover:scale-150 transition-all duration-300 ease-in-out"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="hover:text-acc3 hover:scale-150 transition-all duration-300 ease-in-out"
+            >Projects</a
+          >
+        </div>
         <!-- Pages and Contact sections -->
-        <div class="flex gap-6 justify-center items-center">
+        <div class="md:absolute md:top-7 md:right-3 flex gap-6 justify-center items-center">
           <!-- Pages Drop-down Menu -->
           <el-dropdown class="inline-block">
             <!-- Menu Button  -->
             <button
-              class="group/button inline-flex w-full justify-center gap-x-1.5 rounded-md bg-acc2 px-2 py-1 text-sm font-semibold text-acc4 shadow-xs inset-ring-1 inset-ring-acc4 hover:inset-ring-acc3 hover:text-acc3 dark:bg-white/10 dark:text-white dark:shadow-none dark:inset-ring-white/5 dark:hover:bg-white/20"
+              class="group/button inline-flex w-full justify-center gap-x-1.5 rounded-md bg-acc2 px-2 py-1 md:px-3 md:py-2 text-sm font-semibold text-acc4 shadow-xs inset-ring-1 inset-ring-acc4 hover:inset-ring-acc3 hover:text-acc3 dark:bg-white/10 dark:text-white dark:shadow-none dark:inset-ring-white/5 dark:hover:bg-white/20"
             >
               Pages
               <svg
@@ -128,86 +146,7 @@
           <!-- Contact link -->
           <a
             href="#contact"
-            class="text-right hover:text-acc3 hover:scale-125 transition-all duration-300 ease-in-out"
-            >Contact me</a
-          >
-        </div>
-      </nav>
-      <!-- Computer Nav header  -->
-      <nav
-        class="hidden md:flex flex-row justify-center items-center h-24 w-full p-4 bg-acc1 text-acc4"
-      >
-        <!-- Home link image -->
-        <a href="index.html" class="absolute top-4 left-4"
-          ><img src="./src/images/circle_logo.png" alt="Logo" width="60px" />
-        </a>
-        <!-- Section links -->
-        <div class="flex content-center items-center gap-4 md:gap-12 lg:gap-16">
-          <a
-            href="#about"
-            class="hover:text-acc3 hover:scale-150 transition-all duration-300 ease-in-out"
-            >About me</a
-          >
-          <a
-            href="#skills"
-            class="hover:text-acc3 hover:scale-150 transition-all duration-300 ease-in-out"
-            >Skills</a
-          >
-          <a
-            href="#projects"
-            class="hover:text-acc3 hover:scale-150 transition-all duration-300 ease-in-out"
-            >Projects</a
-          >
-        </div>
-        <!-- Drop-down and Contact container -->
-        <div
-          class="absolute top-7 right-3 flex gap-6 justify-center items-center"
-        >
-          <!-- Drop-down Pages Menu -->
-          <el-dropdown class="inline-block">
-            <!-- Menu Button -->
-            <button
-              class="group/button inline-flex w-full justify-center gap-x-1.5 rounded-md bg-acc2 px-3 py-2 text-sm font-semibold text-acc4 shadow-xs inset-ring-1 inset-ring-acc4 hover:inset-ring-acc3 hover:text-acc3 dark:bg-white/10 dark:text-white dark:shadow-none dark:inset-ring-white/5 dark:hover:bg-white/20"
-            >
-              Pages
-              <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                data-slot="icon"
-                aria-hidden="true"
-                class="-mr-1 size-5 text-acc4 group-hover/button:text-acc3"
-              >
-                <path
-                  d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </button>
-            <!-- Menu Drop-down -->
-            <el-menu
-              anchor="bottom end"
-              popover
-              class="w-56 origin-top-right rounded-md bg-acc4 shadow-lg outline-1 outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10"
-            >
-              <div class="py-1">
-                <a
-                  href="./pages/my_projects.html"
-                  class="block px-4 py-2 text-sm text-gray-700 focus:text-acc3 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5 dark:focus:text-white"
-                  >My Projects</a
-                >
-                <a
-                  href="./pages/social_links.html"
-                  class="block px-4 py-2 text-sm text-gray-700 focus:text-acc3 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5 dark:focus:text-white"
-                  >Social Links</a
-                >
-              </div>
-            </el-menu>
-          </el-dropdown>
-          <!-- Contact link  -->
-          <a
-            href="#contact"
-            class="text-right mr-4 hover:text-acc3 hover:scale-150 transition-all duration-300 ease-in-out"
+            class="text-sm md:text-base md:mr-4 text-right hover:text-acc3 hover:scale-125 transition-all duration-300 ease-in-out"
             >Contact me</a
           >
         </div>
@@ -233,6 +172,12 @@
         alt="Picture of Anthony Black"
         class="absolute bottom-0 mx-auto w-[25%] bg-radial from-acc3 via-transparent via-70% to-transparent"
       />
+      <!-- Projects button  -->
+      <a
+        href="./pages/my_projects.html"
+        class=" absolute bottom-32 md:bottom-6 mx-auto px-4 py-2 border-2 border-acc3 shadow-xl rounded-lg bg-acc3 font-bold text-acc4 text-center text-xs md:text-base lg:text-lg hover:bg-acc4 hover:text-acc3 active:shadow-md active:shadow-acc3 active:scale-102 transition-colors duration-300 ease-in-out"
+        >See My Projects
+      </a>
     </section>
     <!-- Main Content -->
     <main class="bg-acc1 relative">
@@ -265,7 +210,7 @@
         </div>
         <!-- Side Pictures Mobile and Tablet -->
         <div
-          class="flex flex-wrap gap-8 justify-evenly items-center h-72 lg:hidden"
+          class="flex flex-wrap gap-8 justify-evenly items-center min-h-72 lg:hidden"
         >
           <div
             class="-rotate-12 flex justify-center items-center w-40 h-48 bg-acc4 rounded-2xl shadow-xl"
@@ -324,9 +269,9 @@
               class="flex flex-col flex-wrap justify-around w-2/3 md:w-1/3 h-72 p-4 items-center bg-acc2 rounded-xl shadow-lg"
             >
               <div class="flex flex-col justify-around h-20 m-3">
-                <h3 class="text-center text-acc3 text-5xl lg:text-7xl">1</h3>
+                <h3 class="text-center text-acc3 text-5xl lg:text-7xl">4</h3>
                 <p class="text-center text-acc4 pb-1 text-xl lg:text-2xl">
-                  year of experience
+                  months of experience
                 </p>
               </div>
 
@@ -404,8 +349,8 @@
               class="h-60 w-20 rounded-xl hover:w-80 transition-all duration-300 bg-[url(/src/images/Blog_Preview.png)] bg-center shadow-lg"
             ></a>
             <a
-            href="https://recipe-page-main-eosin-omega.vercel.app/"
-            target="_blank"
+              href="https://recipe-page-main-eosin-omega.vercel.app/"
+              target="_blank"
               class="h-60 w-20 rounded-xl hover:w-80 transition-all duration-300 bg-[url(/src/images/Recipe_Page.png)] bg-center shadow-lg"
             ></a>
             <div
@@ -415,7 +360,7 @@
           <!-- Button to Projects page  -->
           <a
             href="./pages/my_projects.html"
-            class="self-center px-4 py-2 border-2 border-acc3 shadow-xl rounded-lg bg-acc3 font-bold text-acc4 text-center text-lg hover:bg-acc4 hover:text-acc3 active:shadow-md active:shadow-acc3 active:scale-102 transition-colors duration-300 ease-in-out"
+            class="self-center px-4 py-2 border-2 border-acc3 shadow-xl rounded-lg bg-acc3 font-bold text-acc4 text-center text-base lg::text-lg hover:bg-acc4 hover:text-acc3 active:shadow-md active:shadow-acc3 active:scale-102 transition-colors duration-300 ease-in-out"
             >Show my Projects</a
           >
         </div>
@@ -510,7 +455,7 @@
       <!-- Back to Top Button -->
       <a
         href="#home"
-        class="w-3/4 py-3 bg-transparent border border-acc2 text-acc2 hover:text-acc4 hover:border-acc4 transition-colors duration-150 text-center rounded-xl"
+        class="w-3/4 py-3 bg-transparent border border-acc4 text-acc4 lg:border-acc2 lg:text-acc2 lg:hover:text-acc4 lg:hover:border-acc4 transition-colors duration-150 text-center rounded-xl"
         >Back to Top</a
       >
     </footer>
