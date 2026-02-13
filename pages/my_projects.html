@@ -32,7 +32,9 @@
           <h1 class="text-xl text-acc3 md:text-4xl lg:text-6xl">My Projects</h1>
         </div>
         <!-- Pages and Contact sections -->
-        <div class="md:absolute md:top-7 md:right-3 flex gap-6 justify-center items-center">
+        <div
+          class="md:absolute md:top-7 md:right-3 flex gap-6 justify-center items-center"
+        >
           <!-- Pages Drop-down Menu -->
           <el-dropdown class="inline-block">
             <!-- Menu Button  -->
@@ -82,14 +84,48 @@
           >
         </div>
       </nav>
-      
     </header>
     <main
       class="min-h-124 relative flex flex-col justify-center items-center gap-12 p-12 bg-acc4"
     >
-      <!-- Social Links Project Card  -->
-      <div
+      <!-- Tip Calculator  -->
+      <article
         class="flex flex-col lg:flex-row justify-between gap-4 items-center w-3/4 min-h-84 p-3 md:p-6 bg-acc2 shadow-[0px_4px_12px_#335145f4] rounded-xl"
+      >
+        <!-- Picture and Link  -->
+        <a
+          href="https://tip-calculator-app-bay-phi.vercel.app/"
+          target="_blank"
+          class="w-full md:w-120 hover:scale-105 transition-transform duration-300 ease-in-out"
+          ><img
+            src="../src/images/Tip_Calculator.png"
+            alt="Social Links Project"
+            class="rounded-xl w-full"
+        /></a>
+        <!-- Caption  -->
+        <div class="w-full md:w-3/4 lg:w-1/2 flex flex-col justify-evenly h-80">
+          <h2 class="text-lg md:text-3xl text-center lg:text-left text-acc3">
+            Tip Calculator App
+          </h2>
+          <p class="text-xs md:text-base text-acc4 px-2 md:indent-8">
+            This project was from a Frontend Mentor challenge. It was my first
+            JavaScript project, and I learned a lot about DOM manipulation and
+            how to create interactive material, letting the user enter info and
+            change the appearance of the site. It was an exciting first project
+            that taught me a lot of new skills.
+          </p>
+          <a
+            href="https://github.com/auntfunny/Tip_Calculator_App"
+            target="_blank"
+            class="px-8 py-2 self-center border-2 border-acc3 shadow-xl rounded-lg bg-acc3 font-bold text-acc4 text-center text-xs md:text-base lg:text-lg hover:bg-acc4 hover:text-acc3 active:shadow-md active:shadow-acc3 active:scale-102 transition-colors duration-300 ease-in-out"
+            >GitHub Repository</a
+          >
+        </div>
+      </article>
+
+      <!-- Social Links Project Card  -->
+      <article
+        class="flex flex-col lg:flex-row-reverse justify-between gap-4 items-center w-3/4 min-h-84 p-3 md:p-6 bg-acc2 shadow-[0px_4px_12px_#335145f4] rounded-xl"
       >
         <!-- Picture and Link  -->
         <a
@@ -120,11 +156,11 @@
             >GitHub Repository</a
           >
         </div>
-      </div>
+      </article>
 
       <!-- Blog Preview Card -->
-      <div
-        class="flex flex-col lg:flex-row-reverse justify-between gap-4 items-center w-3/4 min-h-84 p-3 md:p-6 bg-acc2 shadow-[0px_4px_12px_#335145f4] rounded-xl"
+      <article
+        class="flex flex-col lg:flex-row justify-between gap-4 items-center w-3/4 min-h-84 p-3 md:p-6 bg-acc2 shadow-[0px_4px_12px_#335145f4] rounded-xl"
       >
         <!-- Picture and Link  -->
         <a
@@ -141,7 +177,9 @@
           <h2 class="text-lg md:text-3xl text-center lg:text-right text-acc3">
             Generic Blog Preview Card
           </h2>
-          <p class="text-xs md:text-base text-acc4 lg:text-right px-2 md:indent-8 lg:indent-0">
+          <p
+            class="text-xs md:text-base text-acc4 lg:text-right px-2 md:indent-8 lg:indent-0"
+          >
             This project came from a challenge given on the Frontend Mentor
             site. It was to recreate Blog Preview Card and include some
             interactive hover features. This was one of the very first projects
@@ -155,11 +193,11 @@
             >GitHub Repository</a
           >
         </div>
-      </div>
+      </article>
 
       <!-- Menu Page Card  -->
-      <div
-        class="flex flex-col lg:flex-row justify-between gap-4 items-center w-3/4 min-h-84 p-3 md:p-6 bg-acc2 shadow-[0px_4px_12px_#335145f4] rounded-xl"
+      <article
+        class="flex flex-col lg:flex-row-reverse justify-between gap-4 items-center w-3/4 min-h-84 p-3 md:p-6 bg-acc2 shadow-[0px_4px_12px_#335145f4] rounded-xl"
       >
         <!-- Picture and Link  -->
         <a
@@ -190,10 +228,10 @@
             >GitHub Repository</a
           >
         </div>
-      </div>
+      </article>
       <!-- Gate Project Card -->
-      <div
-        class="flex flex-col lg:flex-row-reverse justify-between gap-4 items-center w-3/4 min-h-84 p-3 md:p-6 bg-acc2 shadow-[0px_4px_12px_#335145f4] rounded-xl"
+      <article
+        class="flex flex-col lg:flex-row justify-between gap-4 items-center w-3/4 min-h-84 p-3 md:p-6 bg-acc2 shadow-[0px_4px_12px_#335145f4] rounded-xl"
       >
         <!-- Picture and Link  -->
         <a href="#" target="_blank" class="w-full md:w-120"
@@ -207,7 +245,9 @@
           <h2 class="text-lg md:text-3xl text-center lg:text-right text-acc3">
             Cabin Gate Project
           </h2>
-          <p class="text-xs md:text-base text-acc4 lg:text-right px-2 md:indent-8 lg:indent-0">
+          <p
+            class="text-xs md:text-base text-acc4 lg:text-right px-2 md:indent-8 lg:indent-0"
+          >
             This was a project I did for a cabin rental project as the main
             entry gate. I built it by myself, designing, cutting and welding the
             frame, setting the rail, and adding the wood planks, creating a
@@ -221,7 +261,7 @@
             >Cabin Facebook</a
           >
         </div>
-      </div>
+      </article>
     </main>
     <footer
       class="col-span-2 flex flex-col gap-4 justify-center items-center min-h-200 lg:min-h-160 bg-acc1"
