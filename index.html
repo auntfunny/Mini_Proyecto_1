@@ -12,12 +12,11 @@
     <link rel="icon" type="image.png" href="./src/images/circle_logo.png" />
     <title>Anthony Black</title>
     <link rel="stylesheet" href="./src/input.css" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
-      type="module"
-    ></script>
+    <script type="module" src="./src/script.js" defer ></script>
+   
   </head>
   <body
+    id="pageBody"
     class="grid grid-cols-1 md:grid-cols-[3fr_1fr] grid-rows-[6rem_20rem_auto_20px] md:grid-rows-[6rem_30rem_auto_20px] lg:grid-rows-[6rem_40rem_auto_20px] font-sunflower"
   >
     <header id="home" class="col-span-2 h-24">
@@ -36,10 +35,11 @@
         </a>
         <!-- Drop-down menu for sections -->
         <div class="flex md:hidden content-center items-center gap-4 md:gap-12 lg:gap-16">
-          <el-dropdown class="inline-block">
+          <nav class="inline-block relative">
             <!-- Menu Button  -->
             <button
-              class="group/button inline-flex w-full justify-center gap-x-1.5 rounded-md bg-acc2 px-2 py-1 text-sm font-semibold text-acc4 shadow-xs inset-ring-1 inset-ring-acc4 hover:inset-ring-acc3 hover:text-acc3 transition-colors duration-150 ease-in-out dark:bg-white/10 dark:text-white dark:shadow-none dark:inset-ring-white/5 dark:hover:bg-white/20"
+            id="sectionDropDownButton"  
+            class="group/button inline-flex w-full justify-center gap-x-1.5 rounded-md bg-acc2 px-2 py-1 text-sm font-semibold text-acc4 shadow-xs inset-ring-1 inset-ring-acc4 hover:inset-ring-acc3 hover:text-acc3 transition-colors duration-150 ease-in-out dark:bg-white/10 dark:text-white dark:shadow-none dark:inset-ring-white/5 dark:hover:bg-white/20"
             >
               Sections
               <svg
@@ -57,30 +57,28 @@
               </svg>
             </button>
             <!-- Menu Drop-down -->
-            <el-menu
-              anchor="bottom end"
-              popover
-              class="w-56 origin-top-right rounded-md bg-acc4 shadow-lg outline-1 outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-200 data-leave:ease-in dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10"
-            >
-              <div class="py-1">
+            <div id="sectionDropDownMenu" class="absolute hidden z-100 top-10 right-0 py-1 w-32 origin-top-right text-left rounded-md bg-acc4 shadow-lg outline-1 outline-black/5">
                 <a
                   href="#about"
-                  class="block px-4 py-2 text-sm text-gray-700 focus:text-acc3 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5 dark:focus:text-white"
+                  id="aboutLink"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:text-acc3 focus:text-acc3 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5 dark:focus:text-white"
                   >About me</a
                 >
                 <a
                   href="#skills"
-                  class="block px-4 py-2 text-sm text-gray-700 focus:text-acc3 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5 dark:focus:text-white"
+                  id="skillsLink"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:text-acc3 focus:text-acc3 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5 dark:focus:text-white"
                   >Skills</a
                 >
                 <a
                   href="#projects"
-                  class="block px-4 py-2 text-sm text-gray-700 focus:text-acc3 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5 dark:focus:text-white"
+                  id="projectsLink"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:text-acc3 focus:text-acc3 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5 dark:focus:text-white"
                   >Projects</a
                 >
               </div>
-            </el-menu>
-          </el-dropdown>
+            
+          </nav>
         </div>
          <!-- Section links -->
         <div class="hidden md:flex content-center items-center gap-4 md:gap-12 lg:gap-16">
@@ -103,9 +101,10 @@
         <!-- Pages and Contact sections -->
         <div class="md:absolute md:top-7 md:right-3 flex gap-6 justify-center items-center">
           <!-- Pages Drop-down Menu -->
-          <el-dropdown class="inline-block">
+          <nav class="inline-block relative">
             <!-- Menu Button  -->
             <button
+              id="pagesDropDownButton"
               class="group/button inline-flex w-full justify-center gap-x-1.5 rounded-md bg-acc2 px-2 py-1 md:px-3 md:py-2 text-sm font-semibold text-acc4 shadow-xs inset-ring-1 inset-ring-acc4 hover:inset-ring-acc3 hover:text-acc3 transition-colors duration-150 ease-in-out dark:bg-white/10 dark:text-white dark:shadow-none dark:inset-ring-white/5 dark:hover:bg-white/20"
             >
               Pages
@@ -124,25 +123,21 @@
               </svg>
             </button>
             <!-- Menu Drop-down -->
-            <el-menu
-              anchor="bottom end"
-              popover
-              class="w-56 origin-top-right rounded-md bg-acc4 shadow-lg outline-1 outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10"
-            >
-              <div class="py-1">
+            
+              <div id="pagesDropDownMenu" class="absolute hidden z-100 top-10 right-0 py-1 w-32 md:w-44 lg:w-52 origin-top-right text-left rounded-md bg-acc4 shadow-lg outline-1 outline-black/5">
                 <a
                   href="./pages/my_projects.html"
-                  class="block px-4 py-2 text-sm text-gray-700 focus:text-acc3 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5 dark:focus:text-white"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:text-acc3 focus:text-acc3 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5 dark:focus:text-white"
                   >My Projects</a
                 >
                 <a
                   href="./pages/social_links.html"
-                  class="block px-4 py-2 text-sm text-gray-700 focus:text-acc3 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5 dark:focus:text-white"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:text-acc3 focus:text-acc3 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5 dark:focus:text-white"
                   >Social Links</a
                 >
               </div>
-            </el-menu>
-          </el-dropdown>
+            
+            </nav>
           <!-- Contact link -->
           <a
             href="#contact"
