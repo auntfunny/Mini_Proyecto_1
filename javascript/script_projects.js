@@ -47,7 +47,7 @@ newTipCalculator.innerHTML = `<!-- Picture and Link  -->
           class="w-full md:w-120 hover:scale-105 transition-transform duration-300 ease-in-out"
           ><img
             src="../src/images/Tip_Calculator.png"
-            alt="Social Links Project"
+            alt="Tip Calculator"
             class="rounded-xl w-full"
         /></a>
         <!-- Caption  -->
