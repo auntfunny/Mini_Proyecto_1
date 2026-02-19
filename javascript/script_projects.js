@@ -28,42 +28,46 @@ function checkMenus(event) {
     togglePageMenu();
   }
 }
-
-const newTipCalculator = document.createElement("article");
-newTipCalculator.id = "newTipCalculator";
 let myClassList1 =
   "flex flex-col lg:flex-row justify-between gap-4 items-center w-3/4 min-h-84 p-3 md:p-6 bg-acc2 shadow-[0px_4px_12px_#335145f4] rounded-xl".split(
     " ",
   );
-let myClassList2 = "flex flex-col lg:flex-row-reverse justify-between gap-4 items-center w-3/4 min-h-84 p-3 md:p-6 bg-acc2 shadow-[0px_4px_12px_#335145f4] rounded-xl".split(" ");
-let classes1 = "flex flex-col lg:flex-row justify-between gap-4 items-center w-3/4 min-h-84 p-3 md:p-6 bg-acc2 shadow-[0px_4px_12px_#335145f4] rounded-xl";
-let classes2 = "flex flex-col lg:flex-row-reverse justify-between gap-4 items-center w-3/4 min-h-84 p-3 md:p-6 bg-acc2 shadow-[0px_4px_12px_#335145f4] rounded-xl";
-let linkClasses = "w-full md:w-120 hover:scale-105 transition-transform duration-300 ease-in-out".split(" ");
-let linkClassName = "w-full md:w-120 hover:scale-105 transition-transform duration-300 ease-in-out";
-let captionClasses = "w-full md:w-3/4 lg:w-1/2 flex flex-col justify-evenly h-80".split(" ");
-let captionClassName = "w-full md:w-3/4 lg:w-1/2 flex flex-col justify-evenly h-80";
+let myClassList2 =
+  "flex flex-col lg:flex-row-reverse justify-between gap-4 items-center w-3/4 min-h-84 p-3 md:p-6 bg-acc2 shadow-[0px_4px_12px_#335145f4] rounded-xl".split(
+    " ",
+  );
+let linkClasses =
+  "w-full md:w-120 hover:scale-105 transition-transform duration-300 ease-in-out".split(
+    " ",
+  );
+let captionClasses =
+  "w-full md:w-3/4 lg:w-1/2 flex flex-col justify-evenly h-80".split(" ");
 
-newTipCalculator.classList.add(myClassList1);
-newTipCalculator.className = classes1;
+const newTipCalculator = document.createElement("article");
+newTipCalculator.id = "newTipCalculator";
+for (let i = 0; i < myClassList1.length; i++) {
+  newTipCalculator.classList.add(myClassList1[i]);
+}
 
 const tipPageLink = document.createElement("a");
 tipPageLink.id = "tipPageLink";
 tipPageLink.href = "https://tip-calculator-app-bay-phi.vercel.app/";
 tipPageLink.target = "_blank";
-tipPageLink.classList.add(linkClasses);
-tipPageLink.className = linkClassName;
+for (let i = 0; i < linkClasses.length; i++) {
+  tipPageLink.classList.add(linkClasses[i]);
+}
 
 const tipImage = document.createElement("img");
 tipImage.id = "tipImage";
 tipImage.alt = "Tip Calculator";
 tipImage.classList.add("rounded-xl", "w-full");
-tipImage.className = "rounded-xl w-full";
 tipImage.src = "/images/Tip_Calculator.png";
 
 const tipCaption = document.createElement("div");
 tipCaption.id = "tipCaption";
-tipCaption.classList.add(captionClasses);
-tipCaption.className = captionClassName;
+for (let i = 0; i < captionClasses.length; i++) {
+  tipCaption.classList.add(captionClasses[i]);
+}
 tipCaption.innerHTML = `<h2 class="text-lg md:text-3xl text-center lg:text-right text-acc3">
             Tip Calculator App
           </h2>
@@ -81,39 +85,36 @@ tipCaption.innerHTML = `<h2 class="text-lg md:text-3xl text-center lg:text-right
             >GitHub Repository</a
           >`;
 
-
 mainBody.appendChild(newTipCalculator);
 newTipCalculator.appendChild(tipPageLink);
 newTipCalculator.appendChild(tipCaption);
 tipPageLink.appendChild(tipImage);
 
-
-
 const newSocialLinks = document.createElement("article");
 newSocialLinks.id = "newSocialLinks";
-newSocialLinks.classList.add(myClassList2);
-newSocialLinks.className = classes2;
-
-
+for (let i = 0; i < myClassList2.length; i++) {
+  newSocialLinks.classList.add(myClassList2[i]);
+}
 
 const socialPageLink = document.createElement("a");
 socialPageLink.id = "socialPageLink";
 socialPageLink.href = "https://social-links-profile-theta-six.vercel.app/";
 socialPageLink.target = "_blank";
-socialPageLink.classList.add(linkClasses);
-socialPageLink.className = linkClassName;
+for (let i = 0; i < linkClasses.length; i++) {
+  socialPageLink.classList.add(linkClasses[i]);
+}
 
 const socialImage = document.createElement("img");
 socialImage.id = "socialImage";
 socialImage.alt = "Tip Calculator";
 socialImage.classList.add("rounded-xl", "w-full");
-socialImage.className = "rounded-xl w-full";
 socialImage.src = "/images/Social_Links.png";
 
 const socialCaption = document.createElement("div");
 socialCaption.id = "socialCaption";
-socialCaption.classList.add(captionClasses);
-socialCaption.className = captionClassName;
+for (let i = 0; i < captionClasses.length; i++) {
+  socialCaption.classList.add(captionClasses[i]);
+}
 socialCaption.innerHTML = `<h2 class="text-lg md:text-3xl text-center lg:text-left text-acc3">
             Generic Social Links Profile
           </h2>
@@ -131,37 +132,36 @@ socialCaption.innerHTML = `<h2 class="text-lg md:text-3xl text-center lg:text-le
             >GitHub Repository</a
           >`;
 
-
 mainBody.appendChild(newSocialLinks);
 newSocialLinks.appendChild(socialPageLink);
 newSocialLinks.appendChild(socialCaption);
 socialPageLink.appendChild(socialImage);
 
-
 const newBlogPreview = document.createElement("article");
 newBlogPreview.id = "newBlogPreview";
-newBlogPreview.classList.add(myClassList1);
-newBlogPreview.className = classes1;
-
+for (let i = 0; i < myClassList1.length; i++) {
+  newBlogPreview.classList.add(myClassList1[i]);
+}
 
 const blogPageLink = document.createElement("a");
 blogPageLink.id = "blogPageLink";
 blogPageLink.href = "https://auntfunny.github.io/Blog_Preview_Card/";
 blogPageLink.target = "_blank";
-blogPageLink.classList.add(linkClasses);
-blogPageLink.className = linkClassName;
+for (let i = 0; i < linkClasses.length; i++) {
+  blogPageLink.classList.add(linkClasses[i]);
+}
 
 const blogImage = document.createElement("img");
 blogImage.id = "blogImage";
 blogImage.alt = "Tip Calculator";
 blogImage.classList.add("rounded-xl", "w-full");
-blogImage.className = "rounded-xl w-full";
 blogImage.src = "/images/Blog_Preview.png";
 
 const blogCaption = document.createElement("div");
 blogCaption.id = "blogCaption";
-blogCaption.classList.add(captionClasses);
-blogCaption.className = captionClassName;
+for (let i = 0; i < captionClasses.length; i++) {
+  blogCaption.classList.add(captionClasses[i]);
+}
 blogCaption.innerHTML = `<h2 class="text-lg md:text-3xl text-center lg:text-right text-acc3">
             Generic Blog Preview Card
           </h2>
@@ -181,38 +181,36 @@ blogCaption.innerHTML = `<h2 class="text-lg md:text-3xl text-center lg:text-righ
             >GitHub Repository</a
           >`;
 
-
 mainBody.appendChild(newBlogPreview);
 newBlogPreview.appendChild(blogPageLink);
 newBlogPreview.appendChild(blogCaption);
 blogPageLink.appendChild(blogImage);
 
-
 const newMenuPage = document.createElement("article");
 newMenuPage.id = "newMenuPage";
-newMenuPage.classList.add(myClassList2);
-newMenuPage.className = classes2;
-
-
+for (let i = 0; i < myClassList2.length; i++) {
+  newMenuPage.classList.add(myClassList2[i]);
+}
 
 const recipePageLink = document.createElement("a");
 recipePageLink.id = "recipePageLink";
 recipePageLink.href = "https://recipe-page-main-eosin-omega.vercel.app/";
 recipePageLink.target = "_blank";
-recipePageLink.classList.add(linkClasses);
-recipePageLink.className = linkClassName;
+for (let i = 0; i < linkClasses.length; i++) {
+  recipePageLink.classList.add(linkClasses[i]);
+}
 
 const recipeImage = document.createElement("img");
 recipeImage.id = "recipeImage";
 recipeImage.alt = "Tip Calculator";
 recipeImage.classList.add("rounded-xl", "w-full");
-recipeImage.className = "rounded-xl w-full";
 recipeImage.src = "/images/Recipe_Page.png";
 
 const recipeCaption = document.createElement("div");
 recipeCaption.id = "recipeCaption";
-recipeCaption.classList.add(captionClasses);
-recipeCaption.className = captionClassName;
+for (let i = 0; i < captionClasses.length; i++) {
+  recipeCaption.classList.add(captionClasses[i]);
+}
 recipeCaption.innerHTML = `<h2 class="text-lg md:text-3xl text-center lg:text-left text-acc3">
             Generic Social Links Profile
           </h2>
@@ -230,39 +228,36 @@ recipeCaption.innerHTML = `<h2 class="text-lg md:text-3xl text-center lg:text-le
             >GitHub Repository</a
           >`;
 
-
 mainBody.appendChild(newMenuPage);
 newMenuPage.appendChild(recipePageLink);
 newMenuPage.appendChild(recipeCaption);
 recipePageLink.appendChild(recipeImage);
 
-
-
 const newGateProject = document.createElement("article");
 newGateProject.id = "newGateProject";
-newGateProject.classList.add(myClassList1);
-newGateProject.className = classes1;
-
-
+for (let i = 0; i < myClassList1.length; i++) {
+  newGateProject.classList.add(myClassList1[i]);
+}
 
 const gatePageLink = document.createElement("a");
 gatePageLink.id = "gatePageLink";
 gatePageLink.href = "#";
 gatePageLink.target = "_blank";
-gatePageLink.classList.add(linkClasses);
-gatePageLink.className = linkClassName;
+for (let i = 0; i < linkClasses.length; i++) {
+  gatePageLink.classList.add(linkClasses[i]);
+}
 
 const gateImage = document.createElement("img");
 gateImage.id = "gateImage";
 gateImage.alt = "Tip Calculator";
 gateImage.classList.add("rounded-xl", "w-full");
-gateImage.className = "rounded-xl w-full";
 gateImage.src = "/images/Gate.png";
 
 const gateCaption = document.createElement("div");
 gateCaption.id = "gateCaption";
-gateCaption.classList.add(captionClasses);
-gateCaption.className = captionClassName;
+for (let i = 0; i < captionClasses.length; i++) {
+  gateCaption.classList.add(captionClasses[i]);
+}
 gateCaption.innerHTML = `<h2 class="text-lg md:text-3xl text-center lg:text-right text-acc3">
             Cabin Gate Project
           </h2>
@@ -282,11 +277,7 @@ gateCaption.innerHTML = `<h2 class="text-lg md:text-3xl text-center lg:text-righ
             >Cabin Facebook</a
           >`;
 
-
 mainBody.appendChild(newGateProject);
 newGateProject.appendChild(gatePageLink);
 newGateProject.appendChild(gateCaption);
 gatePageLink.appendChild(gateImage);
-
-
-
