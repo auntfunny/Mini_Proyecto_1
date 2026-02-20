@@ -57,7 +57,220 @@ let sourceLinkClasses =
     " ",
   );
 
-const listOfProjects = [];
+class projectCard {
+  constructor(newID, style) {
+    this.element = document.createElement("article");
+    this.element.id = newID;
+    if (style === 1) {
+      for (let item of myClassList1) {
+        this.element.classList.add(item);
+      }
+    } else {
+      for (let item of myClassList2) {
+        this.element.classList.add(item);
+      }
+    }
+  }
+
+  appendTo(parentSelector) {
+    const parent = document.querySelector(parentSelector);
+    if (parent) {
+      parent.appendChild(this.element);
+    } else {
+      console.error(
+        `Parent element with selector "${parentSelector}" not found.`,
+      );
+    }
+  }
+}
+
+class projectPageLink {
+  constructor(newID, newHref) {
+    this.element = document.createElement("a");
+    this.element.id = newID;
+    this.element.href = newHref;
+    this.element.target = "_blank";
+    for (let item of linkClasses) {
+      this.element.classList.add(item);
+    }
+  }
+
+  appendTo(parentSelector) {
+    const parent = document.querySelector(parentSelector);
+    if (parent) {
+      parent.appendChild(this.element);
+    } else {
+      console.error(
+        `Parent element with selector "${parentSelector}" not found.`,
+      );
+    }
+  }
+}
+
+class projectImage {
+  constructor(newID, newAlt, newSrc) {
+    this.element = document.createElement("img");
+    this.element.id = newID;
+    this.element.alt = newAlt;
+    this.element.src = newSrc;
+    for (let item of imageClasses) {
+      this.element.classList.add(item);
+    }
+  }
+
+  appendTo(parentSelector) {
+    const parent = document.querySelector(parentSelector);
+    if (parent) {
+      parent.appendChild(this.element);
+    } else {
+      console.error(
+        `Parent element with selector "${parentSelector}" not found.`,
+      );
+    }
+  }
+}
+
+class projectCaption {
+  constructor(newID) {
+    this.element = document.createElement("div");
+    this.element.id = newID;
+    for (let item of captionClasses) {
+      this.element.classList.add(item);
+    }
+  }
+
+  appendTo(parentSelector) {
+    const parent = document.querySelector(parentSelector);
+    if (parent) {
+      parent.appendChild(this.element);
+    } else {
+      console.error(
+        `Parent element with selector "${parentSelector}" not found.`,
+      );
+    }
+  }
+}
+
+class projectTitle {
+  constructor(newID, newTextContent, style) {
+    this.element = document.createElement("h2");
+    this.element.id = newID;
+    this.element.textContent = newTextContent;
+    if (style === 1) {
+      for (let item of articleTitleClasses1) {
+        this.element.classList.add(item);
+      }
+    } else {
+      for (let item of articleTitleClasses2) {
+        this.element.classList.add(item);
+      }
+    }
+  }
+
+  appendTo(parentSelector) {
+    const parent = document.querySelector(parentSelector);
+    if (parent) {
+      parent.appendChild(this.element);
+    } else {
+      console.error(
+        `Parent element with selector "${parentSelector}" not found.`,
+      );
+    }
+  }
+}
+
+class projectP {
+  constructor(newID, newTextContent) {
+    this.element = document.createElement("p");
+    this.element.id = newID;
+    this.element.textContent = newTextContent;
+    for (let item of articlePClasses) {
+      this.element.classList.add(item);
+    }
+  }
+
+  appendTo(parentSelector) {
+    const parent = document.querySelector(parentSelector);
+    if (parent) {
+      parent.appendChild(this.element);
+    } else {
+      console.error(
+        `Parent element with selector "${parentSelector}" not found.`,
+      );
+    }
+  }
+}
+
+class projectSourceLink {
+  constructor(newID, newHref, newText) {
+    this.element = document.createElement("a");
+    this.element.id = newID;
+    this.element.href = newHref;
+    this.element.target = "_blank";
+    this.element.textContent = newText;
+    for (let item of sourceLinkClasses) {
+      this.element.classList.add(item);
+    }
+  }
+
+  appendTo(parentSelector) {
+    const parent = document.querySelector(parentSelector);
+    if (parent) {
+      parent.appendChild(this.element);
+    } else {
+      console.error(
+        `Parent element with selector "${parentSelector}" not found.`,
+      );
+    }
+  }
+}
+/**************************************************************************************************************
+
+          AGE CALCULATOR CARD
+
+***************************************************************************************************************/
+
+const ageCalculator = new projectCard("ageCalculator", 2);
+
+const agePageLink = new projectPageLink(
+  "agePageLink",
+  "https://age-calculator-app-nine-pi.vercel.app/",
+);
+
+const ageImage = new projectImage(
+  "ageImage",
+  "Age Calculator",
+  "/images/Age_Calculator_Large.png",
+);
+
+const ageCaption = new projectCaption("ageCaption");
+
+const ageArticleTitle = new projectTitle(
+  "ageArticleTitle",
+  "Age Calculator App",
+);
+
+let agePText = `This was a challenge given on the Frontend Mentor page. It takes 
+            a date and uses it as the birth date to calculate the age of the person. 
+            As the user inputs the date, it verifies that the date is valid and, 
+            when the button is pressed, it validates the total date before calculating.
+            I learned more about Javascript and how to write more logical and clean code.`;
+
+const ageArticleP = new projectP("ageArticleP", agePText);
+
+const ageSourceLink = new projectSourceLink(
+  "ageSourceLink",
+  "https://github.com/auntfunny/Age-Calculator-App",
+  "GitHub Repository",
+);
+
+ageCalculator.appendTo("#mainBody");
+agePageLink.appendTo("#ageCalculator");
+ageCaption.appendTo("#ageCalculator");
+ageImage.appendTo("#agePageLink");
+ageArticleTitle.appendTo("#ageCaption");
+ageArticleP.appendTo("#ageCaption");
+ageSourceLink.appendTo("#ageCaption");
 
 /**************************************************************************************************************
 
@@ -65,66 +278,48 @@ const listOfProjects = [];
 
 ***************************************************************************************************************/
 
-const newTipCalculator = document.createElement("article");
-newTipCalculator.id = "newTipCalculator";
-for (let item of myClassList1) {
-  newTipCalculator.classList.add(item);
-}
+const newTipCalculator = new projectCard("newTipCalculator", 1);
 
-const tipPageLink = document.createElement("a");
-tipPageLink.id = "tipPageLink";
-tipPageLink.href = "https://tip-calculator-app-bay-phi.vercel.app/";
-tipPageLink.target = "_blank";
-for (let item of linkClasses) {
-  tipPageLink.classList.add(item);
-}
+const tipPageLink = new projectPageLink(
+  "tipPageLink",
+  "https://tip-calculator-app-bay-phi.vercel.app/",
+);
 
-const tipImage = document.createElement("img");
-tipImage.id = "tipImage";
-tipImage.alt = "Tip Calculator";
-tipImage.classList.add("rounded-xl", "w-full");
-tipImage.src = "/images/Tip_Calculator_Large.png";
+const tipImage = new projectImage(
+  "tipImage",
+  "Tip Calculator",
+  "/images/Tip_Calculator_Large.png",
+);
 
-const tipCaption = document.createElement("div");
-tipCaption.id = "tipCaption";
-for (let item of captionClasses) {
-  tipCaption.classList.add(item);
-}
+const tipCaption = new projectCaption("tipCaption");
 
-const tipArticleTitle = document.createElement("h2");
-tipArticleTitle.id = "tipArticleTitle";
-tipArticleTitle.textContent = "Tip Calculator App";
-for (let item of articleTitleClasses1) {
-  tipArticleTitle.classList.add(item);
-}
+const tipArticleTitle = new projectTitle(
+  "tipArticleTitle",
+  "Tip Calculator App",
+  1,
+);
 
-const tipArticleP = document.createElement("p");
-tipArticleP.id = "tipArticleP";
-tipArticleP.textContent = `This project was from a Frontend Mentor challenge. It was my first
+let tipPContent = `This project was from a Frontend Mentor challenge. It was my first
             JavaScript project, and I learned a lot about DOM manipulation and
             how to create interactive material, letting the user enter info and
             change the appearance of the site. It was an exciting first project
             that taught me a lot of new skills.`;
-for (let item of articlePClasses) {
-  tipArticleP.classList.add(item);
-}
 
-const tipSourceLink = document.createElement("a");
-tipSourceLink.id = "tipSourceLink";
-tipSourceLink.href = "https://github.com/auntfunny/Tip_Calculator_App";
-tipSourceLink.target = "_blank";
-tipSourceLink.textContent = "GitHub Repository";
-for (let item of sourceLinkClasses) {
-  tipSourceLink.classList.add(item);
-}
+const tipArticleP = new projectP("tipArticleP", tipPContent);
 
-newTipCalculator.appendChild(tipPageLink);
-newTipCalculator.appendChild(tipCaption);
-tipPageLink.appendChild(tipImage);
-tipCaption.appendChild(tipArticleTitle);
-tipCaption.appendChild(tipArticleP);
-tipCaption.appendChild(tipSourceLink);
-listOfProjects.push(newTipCalculator);
+const tipSourceLink = new projectSourceLink(
+  "tipSourceLink",
+  "https://github.com/auntfunny/Tip_Calculator_App",
+  "GitHub Repository",
+);
+
+newTipCalculator.appendTo("#mainBody");
+tipPageLink.appendTo("#newTipCalculator");
+tipCaption.appendTo("#newTipCalculator");
+tipImage.appendTo("#tipPageLink");
+tipArticleTitle.appendTo("#tipCaption");
+tipArticleP.appendTo("#tipCaption");
+tipSourceLink.appendTo("#tipCaption");
 
 /**************************************************************************************************************
 
@@ -132,266 +327,186 @@ listOfProjects.push(newTipCalculator);
 
 ***************************************************************************************************************/
 
-const newSocialLinks = document.createElement("article");
-newSocialLinks.id = "newSocialLinks";
-for (let item of myClassList2) {
-  newSocialLinks.classList.add(item);
-}
+const newSocialLinks = new projectCard("newSocialLinks", 2);
 
-const socialPageLink = document.createElement("a");
-socialPageLink.id = "socialPageLink";
-socialPageLink.href = "https://social-links-profile-theta-six.vercel.app/";
-socialPageLink.target = "_blank";
-for (let item of linkClasses) {
-  socialPageLink.classList.add(item);
-}
+const socialPageLink = new projectPageLink(
+  "socialPageLink",
+  "https://social-links-profile-theta-six.vercel.app/",
+);
 
-const socialImage = document.createElement("img");
-socialImage.id = "socialImage";
-socialImage.alt = "Social Links Page";
-socialImage.classList.add("rounded-xl", "w-full");
-socialImage.src = "/images/Social_Links_Large.png";
+const socialImage = new projectImage(
+  "socialImage",
+  "Social Links Page",
+  "/images/Social_Links_Large.png",
+);
 
-const socialCaption = document.createElement("div");
-socialCaption.id = "socialCaption";
-for (let item of captionClasses) {
-  socialCaption.classList.add(item);
-}
+const socialCaption = new projectCaption("socialCaption");
 
-const socialArticleTitle = document.createElement("h2");
-socialArticleTitle.id = "socialArticleTitle";
-socialArticleTitle.textContent = "Generic Social Links Profile";
-for (let item of articleTitleClasses2) {
-  socialArticleTitle.classList.add(item);
-}
+const socialArticleTitle = new projectTitle(
+  "socialArticleTitle",
+  "Generic Social Links Profile",
+  2,
+);
 
-const socialArticleP = document.createElement("p");
-socialArticleP.id = "socialArticleP";
-socialArticleP.textContent = `This project came from a challenge given on the Frontend Mentor
+let socialPText = `This project came from a challenge given on the Frontend Mentor
             site. It was to recreate the social links profile given to make it
             as similar to the original picture as possible. This included making
             it responsive for mobile users and including hover and focus states
             to increase accessibility.`;
-for (let item of articlePClasses) {
-  socialArticleP.classList.add(item);
-}
 
-const socialSourceLink = document.createElement("a");
-socialSourceLink.id = "socialSourceLink";
-socialSourceLink.href = "https://github.com/auntfunny/Social_Links_Profile";
-socialSourceLink.target = "_blank";
-socialSourceLink.textContent = "GitHub Repository";
-for (let item of sourceLinkClasses) {
-  socialSourceLink.classList.add(item);
-}
+const socialArticleP = new projectP("socialArticleP", socialPText);
 
-newSocialLinks.appendChild(socialPageLink);
-newSocialLinks.appendChild(socialCaption);
-socialPageLink.appendChild(socialImage);
-socialCaption.appendChild(socialArticleTitle);
-socialCaption.appendChild(socialArticleP);
-socialCaption.appendChild(socialSourceLink);
-listOfProjects.push(newSocialLinks);
+const socialSourceLink = new projectSourceLink(
+  "socialSourceLink",
+  "https://github.com/auntfunny/Social_Links_Profile",
+  "GitHub Repository",
+);
 
-/**************************************************************************************************************
-
-          MENU PAGE CARD
-
-***************************************************************************************************************/
-
-const newMenuPage = document.createElement("article");
-newMenuPage.id = "newMenuPage";
-for (let item of myClassList1) {
-  newMenuPage.classList.add(item);
-}
-
-const recipePageLink = document.createElement("a");
-recipePageLink.id = "recipePageLink";
-recipePageLink.href = "https://recipe-page-main-eosin-omega.vercel.app/";
-recipePageLink.target = "_blank";
-for (let item of linkClasses) {
-  recipePageLink.classList.add(item);
-}
-
-const recipeImage = document.createElement("img");
-recipeImage.id = "recipeImage";
-recipeImage.alt = "Recipe Page";
-recipeImage.classList.add("rounded-xl", "w-full");
-recipeImage.src = "/images/Recipe_Page_Large.png";
-
-const recipeCaption = document.createElement("div");
-recipeCaption.id = "recipeCaption";
-for (let item of captionClasses) {
-  recipeCaption.classList.add(item);
-}
-
-const recipeArticleTitle = document.createElement("h2");
-recipeArticleTitle.id = "recipeArticleTitle";
-recipeArticleTitle.textContent = "Generic Recipe Page";
-for (let item of articleTitleClasses1) {
-  recipeArticleTitle.classList.add(item);
-}
-
-const recipeArticleP = document.createElement("p");
-recipeArticleP.id = "recipeArticleP";
-recipeArticleP.textContent = `This project came from a challenge given on the Frontend Mentor
-            site. The challenge was to create a recipe page based on the picture
-            provided, including styles using span and table features. There was
-            also a mobile picture, and this was the first real responsive,
-            mobile-first page that I created.`;
-for (let item of articlePClasses) {
-  recipeArticleP.classList.add(item);
-}
-
-const recipeSourceLink = document.createElement("a");
-recipeSourceLink.id = "recipeSourceLink";
-recipeSourceLink.href = "https://github.com/auntfunny/Recipe_Page_Main";
-recipeSourceLink.target = "_blank";
-recipeSourceLink.textContent = "GitHub Repository";
-for (let item of sourceLinkClasses) {
-  recipeSourceLink.classList.add(item);
-}
-
-newMenuPage.appendChild(recipePageLink);
-newMenuPage.appendChild(recipeCaption);
-recipePageLink.appendChild(recipeImage);
-recipeCaption.appendChild(recipeArticleTitle);
-recipeCaption.appendChild(recipeArticleP);
-recipeCaption.appendChild(recipeSourceLink);
-listOfProjects.push(newMenuPage);
+newSocialLinks.appendTo("#mainBody");
+socialPageLink.appendTo("#newSocialLinks");
+socialImage.appendTo("#socialPageLink");
+socialCaption.appendTo("#newSocialLinks");
+socialArticleTitle.appendTo("#socialCaption");
+socialArticleP.appendTo("#socialCaption");
+socialSourceLink.appendTo("#socialCaption");
 
 /**************************************************************************************************************
 
           GATE PROJECT CARD
 
 ***************************************************************************************************************/
+const newGateProject = new projectCard("newGateProject", 1);
 
-const newGateProject = document.createElement("article");
-newGateProject.id = "newGateProject";
-for (let item of myClassList2) {
-  newGateProject.classList.add(item);
-}
+const gatePageLink = new projectPageLink("gatePageLink", "#");
 
-const gatePageLink = document.createElement("a");
-gatePageLink.id = "gatePageLink";
-gatePageLink.href = "#";
-for (let item of linkClasses) {
-  gatePageLink.classList.add(item);
-}
+const gateImage = new projectImage(
+  "gateImage",
+  "Gate Project",
+  "/images/Gate_Large.jpeg",
+);
 
-const gateImage = document.createElement("img");
-gateImage.id = "gateImage";
-gateImage.alt = "Tip Calculator";
-gateImage.classList.add("rounded-xl", "w-full");
-gateImage.src = "/images/Gate_Large.jpeg";
+const gateCaption = new projectCaption("gateCaption");
 
-const gateCaption = document.createElement("div");
-gateCaption.id = "gateCaption";
-for (let item of captionClasses) {
-  gateCaption.classList.add(item);
-}
+const gateArticleTitle = new projectTitle(
+  "gateArticleTitle",
+  "Cabin Gate Project",
+  1,
+);
 
-const gateArticleTitle = document.createElement("h2");
-gateArticleTitle.id = "gateArticleTitle";
-gateArticleTitle.textContent = "Cabin Gate Project";
-for (let item of articleTitleClasses2) {
-  gateArticleTitle.classList.add(item);
-}
-
-const gateArticleP = document.createElement("p");
-gateArticleP.id = "gateArticleP";
-gateArticleP.textContent = `This was a project I did for a cabin rental project as the main
+let gateText = `This was a project I did for a cabin rental project as the main
             entry gate. I built it by myself, designing, cutting and welding the
             frame, setting the rail, and adding the wood planks, creating a
             functioning and smooth rolling gate, with the option to add a motor
             to make it automated.`;
-for (let item of articlePClasses) {
-  gateArticleP.classList.add(item);
-}
 
-const gateSourceLink = document.createElement("a");
-gateSourceLink.id = "gateSourceLink";
-gateSourceLink.href = "#";
-gateSourceLink.textContent = "GitHub Repository";
-for (let item of sourceLinkClasses) {
-  gateSourceLink.classList.add(item);
-}
+const gateArticleP = new projectP("gateArticleP", gateText);
 
-newGateProject.appendChild(gatePageLink);
-newGateProject.appendChild(gateCaption);
-gatePageLink.appendChild(gateImage);
-gateCaption.appendChild(gateArticleTitle);
-gateCaption.appendChild(gateArticleP);
-gateCaption.appendChild(gateSourceLink);
-listOfProjects.push(newGateProject);
+const gateSourceLink = new projectSourceLink(
+  "gateSourceLink",
+  "#",
+  "Cabin Facebook Page",
+);
+
+newGateProject.appendTo("#mainBody");
+gatePageLink.appendTo("#newGateProject");
+gateImage.appendTo("#gatePageLink");
+gateCaption.appendTo("#newGateProject");
+gateArticleTitle.appendTo("#gateCaption");
+gateArticleP.appendTo("#gateCaption");
+gateSourceLink.appendTo("#gateCaption");
+
+/**************************************************************************************************************
+
+          MENU PAGE CARD
+
+***************************************************************************************************************/
+const newMenuPage = new projectCard("newMenuPage", 2);
+
+const recipePageLink = new projectPageLink(
+  "recipePageLink",
+  "https://recipe-page-main-eosin-omega.vercel.app/",
+);
+
+const recipeImage = new projectImage(
+  "recipeImage",
+  "Recipe Page",
+  "/images/Recipe_Page_Large.png",
+);
+
+const recipeCaption = new projectCaption("recipeCaption");
+
+const recipeArticleTitle = new projectTitle(
+  "recipeArticleTitle",
+  "Generic Recipe Page",
+  2,
+);
+
+let recipeText = `This project came from a challenge given on the Frontend Mentor
+            site. The challenge was to create a recipe page based on the picture
+            provided, including styles using span and table features. There was
+            also a mobile picture, and this was the first real responsive,
+            mobile-first page that I created.`;
+
+const recipeArticleP = new projectP("recipeArticleP", recipeText);
+
+const recipeSourceLink = new projectSourceLink(
+  "recipeSourceLink",
+  "https://github.com/auntfunny/Recipe_Page_Main",
+  "GitHub Repository",
+);
+
+newMenuPage.appendTo("#mainBody");
+recipePageLink.appendTo("#newMenuPage");
+recipeImage.appendTo("#recipePageLink");
+recipeCaption.appendTo("#newMenuPage");
+recipeArticleTitle.appendTo("#recipeCaption");
+recipeArticleP.appendTo("#recipeCaption");
+recipeSourceLink.appendTo("#recipeCaption");
 
 /**************************************************************************************************************
 
           BLOG PREVIEW CARD
 
 ***************************************************************************************************************/
+const newBlogPreview = new projectCard("newBlogPreview", 1);
 
-const newBlogPreview = document.createElement("article");
-newBlogPreview.id = "newBlogPreview";
-for (let item of myClassList1) {
-  newBlogPreview.classList.add(item);
-}
+const blogPageLink = new projectPageLink(
+  "blogPageLink",
+  "https://auntfunny.github.io/Blog_Preview_Card/",
+);
 
-const blogPageLink = document.createElement("a");
-blogPageLink.id = "blogPageLink";
-blogPageLink.href = "https://auntfunny.github.io/Blog_Preview_Card/";
-blogPageLink.target = "_blank";
-for (let item of linkClasses) {
-  blogPageLink.classList.add(item);
-}
+const blogImage = new projectImage(
+  "blogImage",
+  "Blog Preview Card Page",
+  "/images/Blog_Preview_Large.png",
+);
 
-const blogImage = document.createElement("img");
-blogImage.id = "blogImage";
-blogImage.alt = "Tip Calculator";
-blogImage.classList.add("rounded-xl", "w-full");
-blogImage.src = "/images/Blog_Preview_Large.png";
+const blogCaption = new projectCaption("blogCaption");
 
-const blogCaption = document.createElement("div");
-blogCaption.id = "blogCaption";
-for (let item of captionClasses) {
-  blogCaption.classList.add(item);
-}
+const blogArticleTitle = new projectTitle(
+  "blogArticleTitle",
+  "Generic Blog Preview Card",
+  1,
+);
 
-const blogArticleTitle = document.createElement("h2");
-blogArticleTitle.id = "blogArticleTitle";
-blogArticleTitle.textContent = "Generic Blog Preview Card";
-for (let item of articleTitleClasses1) {
-  blogArticleTitle.classList.add(item);
-}
-
-const blogArticleP = document.createElement("p");
-blogArticleP.id = "blogArticleP";
-blogArticleP.textContent = `This project came from a challenge given on the Frontend Mentor
+let blogText = `This project came from a challenge given on the Frontend Mentor
             site. It was to recreate Blog Preview Card and include some
             interactive hover features. This was one of the very first projects
             I did and started practicing making projects with HTML and basic CSS
             features.`;
-for (let item of articlePClasses) {
-  blogArticleP.classList.add(item);
-}
 
-const blogSourceLink = document.createElement("a");
-blogSourceLink.id = "blogSourceLink";
-blogSourceLink.href = "https://github.com/auntfunny/Blog_Preview_Card";
-blogSourceLink.target = "_blank";
-blogSourceLink.textContent = "GitHub Repository";
-for (let item of sourceLinkClasses) {
-  blogSourceLink.classList.add(item);
-}
+const blogArticleP = new projectP("blogArticleP", blogText);
 
-newBlogPreview.appendChild(blogPageLink);
-newBlogPreview.appendChild(blogCaption);
-blogPageLink.appendChild(blogImage);
-blogCaption.appendChild(blogArticleTitle);
-blogCaption.appendChild(blogArticleP);
-blogCaption.appendChild(blogSourceLink);
-listOfProjects.push(newBlogPreview);
+const blogSourceLink = new projectSourceLink(
+  "blogSourceLink",
+  "https://github.com/auntfunny/Blog_Preview_Card",
+  "GitHub Repository",
+);
 
-for (let project of listOfProjects) {
-  mainBody.appendChild(project);
-}
+newBlogPreview.appendTo("#mainBody");
+blogPageLink.appendTo("#newBlogPreview");
+blogImage.appendTo("#blogPageLink");
+blogCaption.appendTo("#newBlogPreview");
+blogArticleTitle.appendTo("#blogCaption");
+blogArticleP.appendTo("#blogCaption");
+blogSourceLink.appendTo("#blogCaption");
