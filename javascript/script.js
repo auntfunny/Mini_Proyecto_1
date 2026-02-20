@@ -6,7 +6,6 @@ const aboutLink = document.querySelector("#aboutLink");
 const skillsLink = document.querySelector("#skillsLink");
 const projectsLink = document.querySelector("#projectsLink");
 
-
 let pageMenuToggle = 0;
 let sectionMenuToggle = 0;
 
@@ -17,13 +16,10 @@ skillsLink.addEventListener("click", toggleSectionMenu);
 projectsLink.addEventListener("click", toggleSectionMenu);
 document.body.addEventListener("click", checkMenus);
 
-
-
-
 function togglePageMenu(event) {
   if (pageMenuToggle === 0) {
     pagesDropDownMenu.classList.toggle("hidden");
-    event.stopPropagation(); 
+    event.stopPropagation();
     pageMenuToggle = 1;
   } else {
     pagesDropDownMenu.classList.toggle("hidden");
@@ -38,7 +34,7 @@ function togglePageMenu(event) {
 function toggleSectionMenu(event) {
   if (sectionMenuToggle === 0) {
     sectionDropDownMenu.classList.toggle("hidden");
-    event.stopPropagation(); 
+    event.stopPropagation();
     sectionMenuToggle = 1;
   } else {
     sectionDropDownMenu.classList.toggle("hidden");
@@ -50,98 +46,116 @@ function toggleSectionMenu(event) {
   }
 }
 
-
-function checkMenus(event){
-    if (!pagesDropDownMenu.contains(event.target) && pageMenuToggle === 1) {
+function checkMenus(event) {
+  if (!pagesDropDownMenu.contains(event.target) && pageMenuToggle === 1) {
     togglePageMenu();
-  } else if(!sectionDropDownMenu.contains(event.target) && sectionMenuToggle === 1) {
+  } else if (
+    !sectionDropDownMenu.contains(event.target) &&
+    sectionMenuToggle === 1
+  ) {
     toggleSectionMenu();
   }
 }
 
 const skillList = document.querySelector("#skillList");
-const skillClassList = "flex justify-center items-center w-28 h-28 lg:w-36 lg:h-36 rounded-xl bg-acc4 inset-shadow-sm/50 hover:scale-125 transition-all duration-400 ease-in-out".split(" ");
+const skillClassList =
+  "flex justify-center items-center w-28 h-28 lg:w-36 lg:h-36 rounded-xl bg-acc4 inset-shadow-sm/50 hover:scale-125 transition-all duration-400 ease-in-out".split(
+    " ",
+  );
 const skillImageClassList = "w-18 lg:w-28".split(" ");
 
-const htmlSkill = document.createElement("div");
-htmlSkill.id = "htmlSkill";
-for(let item of skillClassList){
-  htmlSkill.classList.add(item);
+class skillItem {
+  constructor(newID) {
+    this.element = document.createElement("div");
+    this.element.id = newID;
+    for (let item of skillClassList) {
+      this.element.classList.add(item);
+    }
+  }
+
+  appendTo(parentSelector) {
+    const parent = document.querySelector(parentSelector);
+    if (parent) {
+      parent.appendChild(this.element);
+    } else {
+      console.error(
+        `Parent element with selector "${parentSelector}" not found.`,
+      );
+    }
+  }
 }
 
-const hmtlSkillImage = document.createElement("img");
-hmtlSkillImage.src = "/public/images/html.png";
-hmtlSkillImage.alt = "HTML Logo";
-for(let item of skillImageClassList){
-  hmtlSkillImage.classList.add(item);
+class skillImage {
+  constructor(newID, newAlt, newSrc) {
+    this.element = document.createElement("img");
+    this.element.id = newID;
+    this.element.alt = newAlt;
+    this.element.src = newSrc;
+    for (let item of skillImageClassList) {
+      this.element.classList.add(item);
+    }
+  }
+
+  appendTo(parentSelector) {
+    const parent = document.querySelector(parentSelector);
+    if (parent) {
+      parent.appendChild(this.element);
+    } else {
+      console.error(
+        `Parent element with selector "${parentSelector}" not found.`,
+      );
+    }
+  }
 }
+/**************************************************************************************************************
 
-htmlSkill.appendChild(hmtlSkillImage);
+          SKILL CARDS
 
-const cssSkill = document.createElement("div");
-cssSkill.id = "cssSkill";
-for(let item of skillClassList){
-  cssSkill.classList.add(item);
-}
+***************************************************************************************************************/
 
-const cssSkillImage = document.createElement("img");
-cssSkillImage.src = "/public/images/css.png";
-cssSkillImage.alt = "CSS Logo";
-for(let item of skillImageClassList){
-  cssSkillImage.classList.add(item);
-}
+const htmlSkill = new skillItem("htmlSkill");
 
-cssSkill.appendChild(cssSkillImage);
+const hmtlSkillImage = new skillImage(
+  "hmtlSkillImage",
+  "HTML Logo",
+  "/images/html.png",
+);
 
-const cSkill = document.createElement("div");
-cSkill.id = "cSkill";
-for(let item of skillClassList){
-  cSkill.classList.add(item);
-}
+const cssSkill = new skillItem("cssSkill");
 
-const cSkillImage = document.createElement("img");
-cSkillImage.src = "/public/images/c.png";
-cSkillImage.alt = "HTML Logo";
-for(let item of skillImageClassList){
-  cSkillImage.classList.add(item);
-}
+const cssSkillImage = new skillImage(
+  "cssSkillImage",
+  "CSS Logo",
+  "/images/css.png",
+);
 
-cSkill.appendChild(cSkillImage);
+const javascriptSkill = new skillItem("javascriptSkill");
 
-const tailwindSkill = document.createElement("div");
-tailwindSkill.id = "tailwindSkill";
-for(let item of skillClassList){
-  tailwindSkill.classList.add(item);
-}
+const javascriptSkillImage = new skillImage(
+  "javascriptSkillImage",
+  "JavaScript Logo",
+  "/images/javascript.png",
+);
 
-const tailwindSkillImage = document.createElement("img");
-tailwindSkillImage.src = "/public/images/tailwind.png";
-tailwindSkillImage.alt = "HTML Logo";
-for(let item of skillImageClassList){
-  tailwindSkillImage.classList.add(item);
-}
+const cSkill = new skillItem("cSkill");
 
-tailwindSkill.appendChild(tailwindSkillImage);
+const cSkillImage = new skillImage("cSkillImage", "C++ Logo", "/images/c.png");
 
-const javascriptSkill = document.createElement("div");
-javascriptSkill.id = "tailwindSkill";
-for(let item of skillClassList){
-  javascriptSkill.classList.add(item);
-}
+const tailwindSkill = new skillItem("tailwindSkill");
 
-const javascriptSkillImage = document.createElement("img");
-javascriptSkillImage.src = "/public/images/javascript.png";
-javascriptSkillImage.alt = "HTML Logo";
-for(let item of skillImageClassList){
-  javascriptSkillImage.classList.add(item);
-}
+const tailwindSkillImage = new skillImage(
+  "tailwindSkillImage",
+  "Tailwind Logo",
+  "/images/tailwind.png",
+);
 
-javascriptSkill.appendChild(javascriptSkillImage);
-
-
-
-skillList.appendChild(htmlSkill);
-skillList.appendChild(cssSkill);
-skillList.appendChild(javascriptSkill);
-skillList.appendChild(tailwindSkill);
-skillList.appendChild(cSkill);
+htmlSkill.appendTo("#skillList");
+hmtlSkillImage.appendTo("#htmlSkill");
+cssSkill.appendTo("#skillList");
+cssSkillImage.appendTo("#cssSkill");
+javascriptSkill.appendTo("#skillList");
+javascriptSkillImage.appendTo("#javascriptSkill");
+cSkill.appendTo("#skillList");
+cSkillImage.appendTo("#cSkill");
+tailwindSkill.appendTo("#skillList");
+tailwindSkillImage.appendTo("#tailwindSkill");
