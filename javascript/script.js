@@ -112,50 +112,77 @@ class skillImage {
           SKILL CARDS
 
 ***************************************************************************************************************/
+const skillCardList = [];
 
-const htmlSkill = new skillItem("htmlSkill");
+const htmlCard ={
+  base: {
+    id: "htmlSkill"
+  },
+  image: {
+    id: "hmtlSkillImage",
+    alt: "HTML Logo",
+    src: "/images/html.png"
+  }
+}
+skillCardList.push(htmlCard);
 
-const hmtlSkillImage = new skillImage(
-  "hmtlSkillImage",
-  "HTML Logo",
-  "/images/html.png",
-);
+const cssCard ={
+  base: {
+    id: "cssSkill"
+  },
+  image: {
+    id: "cssSkillImage",
+    alt: "CSS Logo",
+    src: "/images/css.png"
+  }
+}
+skillCardList.push(cssCard);
 
-const cssSkill = new skillItem("cssSkill");
 
-const cssSkillImage = new skillImage(
-  "cssSkillImage",
-  "CSS Logo",
-  "/images/css.png",
-);
+const javascriptCard ={
+  base: {
+    id: "javascriptSkill"
+  },
+  image: {
+    id: "javascriptSkillImage",
+    alt: "JavaScript Logo",
+    src: "/images/javascript.png"
+  }
+}
+skillCardList.push(javascriptCard);
 
-const javascriptSkill = new skillItem("javascriptSkill");
 
-const javascriptSkillImage = new skillImage(
-  "javascriptSkillImage",
-  "JavaScript Logo",
-  "/images/javascript.png",
-);
+const cCard ={
+  base: {
+    id: "cSkill"
+  },
+  image: {
+    id: "cSkillImage",
+    alt: "C++ Logo",
+    src: "/images/c.png"
+  }
+}
+skillCardList.push(cCard);
 
-const cSkill = new skillItem("cSkill");
 
-const cSkillImage = new skillImage("cSkillImage", "C++ Logo", "/images/c.png");
+const tailwindCard ={
+  base: {
+    id: "tailwindSkill"
+  },
+  image: {
+    id: "tailwindSkillImage",
+    alt: "Tailwind Logo",
+    src: "/images/tailwind.png"
+  }
+}
+skillCardList.push(tailwindCard);
 
-const tailwindSkill = new skillItem("tailwindSkill");
 
-const tailwindSkillImage = new skillImage(
-  "tailwindSkillImage",
-  "Tailwind Logo",
-  "/images/tailwind.png",
-);
+for(let skill of skillCardList){
+  const newCard = new skillItem (skill.base.id);
+  const newImage = new skillImage(skill.image.id, skill.image.alt, skill.image.src)
 
-htmlSkill.appendTo("#skillList");
-hmtlSkillImage.appendTo("#htmlSkill");
-cssSkill.appendTo("#skillList");
-cssSkillImage.appendTo("#cssSkill");
-javascriptSkill.appendTo("#skillList");
-javascriptSkillImage.appendTo("#javascriptSkill");
-cSkill.appendTo("#skillList");
-cSkillImage.appendTo("#cSkill");
-tailwindSkill.appendTo("#skillList");
-tailwindSkillImage.appendTo("#tailwindSkill");
+  newCard.appendTo("#skillList");
+  newImage.appendTo(`#${skill.base.id}`);
+}
+
